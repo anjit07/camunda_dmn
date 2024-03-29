@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "e1b674bf-6d2d-428e-92fa-6721e2ff5742",
+		"name": "camunda_dmn_example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "3614691"
+	},
+	"item": [
+		{
+			"name": "Hit Policy Any",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"year\": 13\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/dmn/age/evaluate"
+			},
+			"response": []
+		},
+		{
+			"name": "Hit Policy Collection & first",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"locationCode\": \"001101\",\r\n    \"areaCode\":\"0011\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/dmn/retail_store/evaluate"
+			},
+			"response": []
+		},
+		{
+			"name": "Hit Policy min & max & count",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"year\": 2\r\n}"
+				},
+				"url": "http://localhost:8080/dmn/company_bonus_max_min_count/evaluate"
+			},
+			"response": []
+		},
+		{
+			"name": "Camunda default engine-rest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variables\": {\r\n        \"stateCode\": {\r\n            \"key\":\"String\",\r\n            \"value\":\"1\"\r\n        }\r\n    }\r\n}"
+				},
+				"url": "http://localhost:8080/engine-rest/decision-definition/key/stateList/evaluate"
+			},
+			"response": []
+		},
+		{
+			"name": "Hit Policy sum",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"year\": 4\r\n}"
+				},
+				"url": "http://localhost:8080/dmn/company_bonus/evaluate"
+			},
+			"response": []
+		}
+	]
+}

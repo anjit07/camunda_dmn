@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_10hzbfo" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.21.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.4.0">
+  <decision id="age" name="Age">
+    <decisionTable id="DecisionTable_08479o1" hitPolicy="ANY">
+      <input id="Input_1" label="Age Year">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text>year</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Category " name="category " typeRef="string" />
+      <rule id="DecisionRule_0t5u4bu">
+        <inputEntry id="UnaryTests_10zqgfx">
+          <text>[1..2]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_149sbjq">
+          <text>"infant"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12fbfs8">
+        <inputEntry id="UnaryTests_0ldrheg">
+          <text>[3..5]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1gr2n55">
+          <text>"child"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1owe3lj">
+        <inputEntry id="UnaryTests_0y0yaq2">
+          <text>[4..12]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pl4e6i">
+          <text>"child"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1q93yv9">
+        <inputEntry id="UnaryTests_002srlv">
+          <text>[13..20]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nsohqr">
+          <text>"adults"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00k31ft">
+        <inputEntry id="UnaryTests_1i2jyve">
+          <text>[18..60]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11vk9j2">
+          <text>"adults"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="age">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

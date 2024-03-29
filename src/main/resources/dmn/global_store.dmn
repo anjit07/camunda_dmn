@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1o0n9dc" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.21.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.4.0">
+  <decision id="global_store" name="Global Store">
+    <decisionTable id="DecisionTable_1i8xmve">
+      <input id="Input_1" label="State Code">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text>stateCode</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1hlozjc" label="Country Code ">
+        <inputExpression id="LiteralExpression_1vptjhz" typeRef="string">
+          <text>countrycode </text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Area Code" name="areaCode" typeRef="integer" />
+      <rule id="DecisionRule_18f8zxh">
+        <inputEntry id="UnaryTests_1b94bnd">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0q5egoh">
+          <text>"IN"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13qsg7e">
+          <text>0011</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0c6zhev">
+        <inputEntry id="UnaryTests_109m6wu">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tiv3yz">
+          <text>"IN"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a8p3bw">
+          <text>0020</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ufnfeh">
+        <inputEntry id="UnaryTests_0ovbccz">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0maox4y">
+          <text>"IN"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14ig6wm">
+          <text>0030</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01d2yqj">
+        <inputEntry id="UnaryTests_0wji9nf">
+          <text>4</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mkpx3b">
+          <text>"IN"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0eoqags">
+          <text>0040</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zlrdaq">
+        <inputEntry id="UnaryTests_160ndhw">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o2j9xr">
+          <text>"US"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0idudjm">
+          <text>1111</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1kbjaal">
+        <inputEntry id="UnaryTests_1o648e3">
+          <text>10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1szhs10">
+          <text>"US"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l61fzf">
+          <text>1120</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0y5p4u0">
+        <inputEntry id="UnaryTests_1y4a1qo">
+          <text>15</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uxlyf6">
+          <text>"US"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qbuzyx">
+          <text>1130</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="global_store">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

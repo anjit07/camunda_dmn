@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: camunda_dmn
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    show-sql: false
+    open-in-view: true
+    database: H2
+    properties:
+      hibernate.format_sql: true
+      hibernate.hbm2ddl.import_files: /db/h2-master-data.sql
+    hibernate:
+      ddl-auto: create-drop
+
+server:
+  port: 8080
+
+camunda:
+  bpm:
+    admin-user:
+      id: Admin
+      password: Admin
+    process-engine-name: default
+    generic-properties:
+      properties:
+        historyTimeToLive: P1D
+

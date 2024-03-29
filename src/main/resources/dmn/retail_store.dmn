@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="retail_store_dmn" name="AXY Retail store" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.21.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.4.0">
+  <decision id="retail_store" name="Retail Store">
+    <decisionTable id="DecisionTable_1a9fml8" hitPolicy="COLLECT">
+      <input id="Input_1" label="Location Code">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>locationCode</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0t2yr70" label="Area Code">
+        <inputExpression id="LiteralExpression_0lqaep4" typeRef="integer">
+          <text>areaCode</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Status" name="status" typeRef="string" />
+      <output id="OutputClause_0m149fh" label="Recommendation" name="recommendation" typeRef="array" />
+      <output id="OutputClause_08cqjeh" label="Address" name="address" typeRef="string" />
+      <rule id="DecisionRule_1qy5ez9">
+        <inputEntry id="UnaryTests_0tvos78">
+          <text>"001101"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uyzh9g">
+          <text>0011</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rteye2">
+          <text>"available"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k4ant8">
+          <text>["12345","978365"]</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n45jw7">
+          <text>"Delhi-6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fikov7">
+        <inputEntry id="UnaryTests_1szt0rd">
+          <text>"001102"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x6p3gf">
+          <text>0020</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0hsrrbu">
+          <text>"available"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0liwq9r">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tmozgv">
+          <text>"Noida-16"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1il79of">
+        <inputEntry id="UnaryTests_0e7gh02">
+          <text>"001102"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nqszlv">
+          <text>0030</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06ar9h0">
+          <text>"unavailable"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bp0v1b">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18n9bis">
+          <text>-</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nlmkvu">
+        <inputEntry id="UnaryTests_0y83jlw">
+          <text>"001103"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_081r3oi">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0trj8jd">
+          <text>"unavailable"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y8sje9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06ioivl">
+          <text>-</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lqxb6l">
+        <inputEntry id="UnaryTests_0ubn8jj">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19uu9y7">
+          <text>0031</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1akjioi">
+          <text>"available"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cscogm">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0stpglf">
+          <text>"UP-19"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_099ppr3">
+        <inputEntry id="UnaryTests_1f8lmk8">
+          <text>"001101"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j8h2mt">
+          <text>0011</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qyvg2p">
+          <text>"available"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03alx24">
+          <text>["12345","978365","877"]</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0imasoc">
+          <text>"Delhi-7"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1f8fpz8">
+        <inputEntry id="UnaryTests_04xapd4">
+          <text>not("123")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hera1h">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mh5aen">
+          <text>"available"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hxiul8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pp8nbw">
+          <text>"Center Delhi-02"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0kpuu4h">
+        <inputEntry id="UnaryTests_0z4tqn4">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19v9ezp">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1islxx6">
+          <text>"available"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0whpgrn">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03fsrr6">
+          <text>"Center Delhi-01"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="retail_store">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

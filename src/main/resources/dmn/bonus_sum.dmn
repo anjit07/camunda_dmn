@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_19t3jd6" name="Bonus" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.21.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.4.0">
+  <decision id="company_bonus" name="Company Bonus">
+    <decisionTable id="DecisionTable_0hskwc5" hitPolicy="COLLECT" aggregation="SUM">
+      <input id="Input_1" label="Year">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text>year</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Bonus Amount" name="bonus" typeRef="integer" />
+      <rule id="DecisionRule_1ebmyt4">
+        <description>company will give bonus amount 100%. if you got 5 rating</description>
+        <inputEntry id="UnaryTests_0unexy5">
+          <text>&gt;1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ggvu6r">
+          <text>1000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0htem29">
+        <description>company will give bonus amount 100%. if you got 5 rating</description>
+        <inputEntry id="UnaryTests_0mnd6eu">
+          <text>&gt;2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gywqrm">
+          <text>1500</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_194wz74">
+        <description>company will give bonus amount 100%. if you got 5 rating</description>
+        <inputEntry id="UnaryTests_0ravi5p">
+          <text>&gt;3</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0clxqpt">
+          <text>30000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0a3fayy">
+        <description>company will give bonus amount 100%. if you got 5 rating</description>
+        <inputEntry id="UnaryTests_0kfugee">
+          <text>&gt;4</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1r1jvht">
+          <text>20000</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="company_bonus">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
