@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1o0n9dc" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.21.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.4.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_1o0n9dc" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.21.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.4.0">
   <decision id="global_store" name="Global Store">
     <decisionTable id="DecisionTable_1i8xmve">
       <input id="Input_1" label="State Code">
@@ -32,7 +32,7 @@
           <text>"IN"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0a8p3bw">
-          <text>0020</text>
+          <text>0012</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ufnfeh">
@@ -43,7 +43,7 @@
           <text>"IN"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14ig6wm">
-          <text>0030</text>
+          <text>0021</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_01d2yqj">
@@ -54,7 +54,7 @@
           <text>"IN"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0eoqags">
-          <text>0040</text>
+          <text>0012</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0zlrdaq">
@@ -92,11 +92,72 @@
       </rule>
     </decisionTable>
   </decision>
+  <decision id="store_address" name="store Address">
+    <informationRequirement id="InformationRequirement_0pivuf5">
+      <requiredDecision href="#global_store" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0kw3jtc" hitPolicy="COLLECT">
+      <input id="InputClause_147nyyj" label="Area Code">
+        <inputExpression id="LiteralExpression_06ck94k" typeRef="integer">
+          <text>areaCode</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0phr2ho" label="Addres" name="address" typeRef="string" />
+      <rule id="DecisionRule_0son99o">
+        <inputEntry id="UnaryTests_0y9t34i">
+          <text>0011</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1emypwk">
+          <text>"Delhi-6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0g1u8qc">
+        <inputEntry id="UnaryTests_1wnvfj8">
+          <text>0020</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ooa1d0">
+          <text>"Noida-16"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0yc803w">
+        <inputEntry id="UnaryTests_1f4ppoq">
+          <text>0021</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0djmx4f">
+          <text>"Noida-18"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gjw768">
+        <inputEntry id="UnaryTests_0lgy6fi">
+          <text>0012</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ik4ra2">
+          <text>"Delhi-7"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0pqv5qq">
+        <inputEntry id="UnaryTests_1a776r0">
+          <text>1111</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nkreo1">
+          <text>"Washington D.C"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <dmndi:DMNShape dmnElementRef="global_store">
-        <dc:Bounds height="80" width="180" x="160" y="100" />
+        <dc:Bounds height="80" width="180" x="190" y="300" />
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1m4uqly" dmnElementRef="store_address">
+        <dc:Bounds height="80" width="180" x="190" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0ll37ft" dmnElementRef="InformationRequirement_0pivuf5">
+        <di:waypoint x="280" y="300" />
+        <di:waypoint x="280" y="180" />
+        <di:waypoint x="280" y="160" />
+      </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>
